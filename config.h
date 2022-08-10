@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Medium Nerd Font:size=10:antialias=true:autohint=true";
-static char *font2[] = { "JoyPixels:size=10:antialias=true:autohint=true" };
-static int borderpx = 2;
+static char *font = "JetBrainsMono Medium Nerd Font:size=11.5:antialias=true:autohint=true";
+static char *font2[] = { "JoyPixels:size=11.5:antialias=true:autohint=true" };
+static int borderpx = 1;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -104,7 +104,7 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 2;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -210,8 +210,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+	{ MODKEY,               XK_equal,       zoom,           {.f = +1} },
+	{ MODKEY,               XK_minus,       zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
 	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
